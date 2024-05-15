@@ -11,5 +11,8 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Menu Grid.Row="0" FontSize="13">
+            
+        </Menu>
     </Grid>
 </Window>
