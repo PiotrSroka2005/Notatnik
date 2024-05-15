@@ -75,5 +75,21 @@ namespace Notatnik
                 zapisane = true;
             }
         }
+
+        private bool ZapiszJako()
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Title = "Zapisz jako";
+            dialog.Filter = "txt files (*.txt)|*.txt";
+            dialog.AddExtension = true;
+            if (dialog.ShowDialog() == true)
+            {
+                File.WriteAllText(dialog.FileName, Text.Text);
+                sciezka = dialog.FileName;
+                zapisane = true;
+                return true;
+            }
+            return false;
+        }
     }
 }
