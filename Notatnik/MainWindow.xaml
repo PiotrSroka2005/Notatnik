@@ -29,5 +29,8 @@
                 <MenuItem Header="O programie"/>
             </MenuItem>
         </Menu>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Visible">
+            <TextBox x:Name="Text" BorderThickness="0" SpellCheck.IsEnabled="True" AcceptsReturn="True" AcceptsTab="True" TextChanged="ZmianaTextu_Click"/>
+        </ScrollViewer>
     </Grid>
 </Window>
