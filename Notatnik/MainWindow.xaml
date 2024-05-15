@@ -18,7 +18,15 @@
                 <MenuItem Header="Zapisz jako" InputGestureText="Ctrl+Shift+S" Click="ZapiszJako_Click"/>
                 <MenuItem Header="Zakończ" Click="Zakoncz_Click"/>
             </MenuItem>
-            
+            <MenuItem Header="Edycja">
+                <MenuItem Header="Wytnij" InputGestureText="Ctrl+X" Click="Wytnij_Click"/>
+                <MenuItem Header="Kopiuj" InputGestureText="Ctrl+C" Click="Kopiuj_Click"/>
+                <MenuItem Header="Wklej" InputGestureText="Ctrl+V" Click="Wklej_Click"/>
+                <MenuItem Header="Usuń" InputGestureText="Del" Click="Usun_Click"/>
+            </MenuItem>
+            <MenuItem Header="Pomoc">
+                <MenuItem Header="O programie"/>
+            </MenuItem>
         </Menu>
     </Grid>
 </Window>
