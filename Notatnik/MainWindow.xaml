@@ -12,6 +12,12 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Menu Grid.Row="0" FontSize="13">
+            <MenuItem Header="Plik">
+                <MenuItem Header="Otwórz" InputGestureText="Ctrl+O" Click="Otworz_Click"/>
+                <MenuItem Header="Zapisz" InputGestureText="Ctrl+S" Click="Zapisz_Click"/>
+                <MenuItem Header="Zapisz jako" InputGestureText="Ctrl+Shift+S" Click="ZapiszJako_Click"/>
+                <MenuItem Header="Zakończ" Click="Zakoncz_Click"/>
+            </MenuItem>
             
         </Menu>
     </Grid>
