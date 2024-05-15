@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Notatnik
 {
@@ -31,6 +32,18 @@ namespace Notatnik
         private void Kopiuj_Click(object sender, EventArgs e)
         {
             Text.Copy();
+        }
+
+        private void Wklej_Click(object sender, EventArgs e)
+        {
+            Text.Paste();
+        }
+
+        private void Usun_Click(object sender, EventArgs e)
+        {
+            int poczatekZaznaczenia = Text.SelectionStart;
+            Text.Text = Text.Text.Remove(poczatekZaznaczenia, Text.SelectionLength);
+            Text.Select(poczatekZaznaczenia, 0);
         }
     }
 }
