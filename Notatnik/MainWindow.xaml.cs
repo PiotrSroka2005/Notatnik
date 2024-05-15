@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -103,6 +104,32 @@ namespace Notatnik
                 File.WriteAllText(sciezka, Text.Text);
                 zapisane = true;
             }
+        }
+
+        private void Zakoncz_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            if (!zapisane)
+            {
+                MessageBoxResult odpowiedz = MessageBox.Show("Czy chcesz zapisać zmiany w pliku?", "Notatnik", MessageBoxButton.YesNoCancel);
+                if (odpowiedz == MessageBoxResult.Yes)
+                {
+                    if (sciezka == "")
+                    {
+                        if (!ZapiszJako())
+                            e.Cancel = true;
+                    }
+                    else
+                        Zapisz();
+                }
+                else if (odpowiedz == MessageBoxResult.Cancel)
+                    e.Cancel = true;
+            }
+            base.OnClosing(e);
         }
     }
 }
