@@ -22,5 +22,15 @@ namespace Notatnik
         {
             InitializeComponent();
         }
+
+        private void Wytnij_Click(object sender, EventArgs e)
+        {
+            Text.Cut();
+        }
+
+        private void Kopiuj_Click(object sender, EventArgs e)
+        {
+            Text.Copy();
+        }
     }
 }
