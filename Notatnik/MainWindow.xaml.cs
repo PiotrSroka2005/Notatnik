@@ -45,5 +45,20 @@ namespace Notatnik
             Text.Text = Text.Text.Remove(poczatekZaznaczenia, Text.SelectionLength);
             Text.Select(poczatekZaznaczenia, 0);
         }
+
+        private void Otworz_Click(object sender, EventArgs e)
+        {
+            Otworz();
+        }
+
+        private void ZapiszJako_Click(object sender, EventArgs e)
+        {
+            ZapiszJako();
+        }
+
+        private void Zapisz_Click(object sender, EventArgs e)
+        {
+            Zapisz();
+        }
     }
 }
