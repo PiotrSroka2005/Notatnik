@@ -16,6 +16,8 @@ namespace Notatnik
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool zapisane = false;
+        private string sciezka = "";
         public MainWindow()
         {
             InitializeComponent();
