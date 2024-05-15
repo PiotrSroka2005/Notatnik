@@ -91,5 +91,18 @@ namespace Notatnik
             }
             return false;
         }
+
+        private void Zapisz()
+        {
+            if (sciezka == "")
+            {
+                ZapiszJako();
+            }
+            else
+            {
+                File.WriteAllText(sciezka, Text.Text);
+                zapisane = true;
+            }
+        }
     }
 }
