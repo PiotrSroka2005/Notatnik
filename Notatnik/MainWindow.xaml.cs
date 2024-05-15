@@ -138,5 +138,28 @@ namespace Notatnik
                 if (File.ReadAllText(sciezka) != Text.Text)
                     zapisane = false;
         }
+
+        private void WcisnieciePrzycisku_Click(object sender, KeyEventArgs e)
+        {
+            if (Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl))
+            {
+                if (e.Key == Key.O)
+                {
+                    Otworz();
+                    Keyboard.ClearFocus();
+                }
+                if (e.Key == Key.S)
+                {
+                    Zapisz();
+                    Keyboard.ClearFocus();
+                }
+                if (Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift))
+                    if (e.Key == Key.S)
+                    {
+                        ZapiszJako();
+                        Keyboard.ClearFocus();
+                    }
+            }
+        }
     }
 }
