@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Microsoft.Win32;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -59,6 +60,20 @@ namespace Notatnik
         private void Zapisz_Click(object sender, EventArgs e)
         {
             Zapisz();
+        }
+
+        private void Otworz()
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "txt files (*.txt)|*.txt";
+            dialog.Multiselect = false;
+            dialog.Title = "Otwórz";
+            if (dialog.ShowDialog() == true)
+            {
+                Text.Text = File.ReadAllText(dialog.FileName);
+                sciezka = dialog.FileName;
+                zapisane = true;
+            }
         }
     }
 }
