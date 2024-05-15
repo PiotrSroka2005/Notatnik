@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System.ComponentModel;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,7 +11,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Notatnik
 {
@@ -130,6 +130,13 @@ namespace Notatnik
                     e.Cancel = true;
             }
             base.OnClosing(e);
+        }
+
+        private void ZmianaTextu_Click(object sender, EventArgs e)
+        {
+            if (sciezka != "")
+                if (File.ReadAllText(sciezka) != Text.Text)
+                    zapisane = false;
         }
     }
 }
